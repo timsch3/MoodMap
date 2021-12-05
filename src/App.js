@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+
+import { useState } from "react";
+
+import Options from "./pages/Options";
+import Today from "./pages/Today";
+import Stats from "./pages/Stats";
 
 function App() {
+  const [activePage, setActivePage] = useState(<Options />);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>MoodMap</h1>
+      <nav id="topNav">
+        <ul>
+          <li>
+            <button
+              onClick={() => {
+                setActivePage(<Options />);
+              }}
+            >
+              Options
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                setActivePage(<Today />);
+              }}
+            >
+              Today
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                setActivePage(<Stats />);
+              }}
+            >
+              Stats
+            </button>
+          </li>
+        </ul>
+      </nav>
+      {activePage}
     </div>
   );
 }
