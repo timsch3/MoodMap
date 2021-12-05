@@ -5,17 +5,9 @@ const Options = () => {
   return (
     <main>
       <h2>Choose what to keep track of:</h2>
-      <ul>
-        <li>
-          <OptionForced name="Mood" />
-        </li>
-        <li>
-          <Option name="Work" />
-        </li>
-        <li>
-          <Option name="Exercise" />
-        </li>
-      </ul>
+      <OptionForced name="Mood" />
+      <Option name="Work" />
+      <Option name="Exercise" />
     </main>
   );
 };

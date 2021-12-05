@@ -30,6 +30,9 @@ const Task = (props) => {
           <input type="checkbox" id={`today-task-${name}`} />
         </div>
       );
+      break;
+    default:
+      break;
   }
   return task === true ? taskTemplate : null;
 };

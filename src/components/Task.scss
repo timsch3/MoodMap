@@ -1,4 +1,6 @@
 #today-task {
+  line-height: 2rem;
+  border-bottom: 1px solid var(--border-color1);
   margin-bottom: var(--y-list-gap);
   label {
     margin-right: var(--x-label-input);
