@@ -1,5 +1,3 @@
-import "./Options.scss";
-
 import Option from "../components/Option";
 import OptionForced from "../components/OptionForced";
 
@@ -12,7 +10,7 @@ const Options = () => {
           <OptionForced name="Mood" />
         </li>
         <li>
-          <Option name="Working" />
+          <Option name="Work" />
         </li>
         <li>
           <Option name="Exercise" />

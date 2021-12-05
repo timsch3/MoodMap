@@ -4,10 +4,14 @@
 }
 
 :root {
+  /* colors */
   --bg-color1: hsl(0, 0%, 10%);
   --bg-color2: hsl(0, 0%, 15%);
   --font-color1: hsl(0, 0%, 95%);
   --border-color1: hsl(0, 0%, 20%);
+  /* margins */
+  --x-label-input: 0.7rem;
+  --y-list-gap: 1rem;
 }
 
 body {
@@ -23,7 +27,8 @@ body {
 }
 
 #root {
-  max-width: 500px;
+  margin-top: 5rem;
+  width: 400px;
   background-color: var(--bg-color2);
   color: var(--font-color1);
 }
