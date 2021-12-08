@@ -6,6 +6,7 @@ const Options = () => {
     <main>
       <h2>Choose what to keep track of:</h2>
       <OptionForced name="Mood" />
+      <Option name="Notes" />
       <Option name="Work" />
       <Option name="Exercise" />
     </main>

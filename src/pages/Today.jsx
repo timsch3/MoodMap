@@ -5,6 +5,7 @@ const Today = () => {
     <main>
       <h2>What's up today?</h2>
       <Task name="Mood" type="select" />
+      <Task name="Notes" type="text" />
       <Task name="Work" type="check" />
       <Task name="Exercise" type="check" />
     </main>

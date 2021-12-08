@@ -31,8 +31,16 @@ const Task = (props) => {
         </div>
       );
       break;
-    default:
+    case "text":
+      taskTemplate = (
+        <div id="today-task">
+          <label htmlFor={`today-task-${name}`}>{name}</label>
+          <br />
+          <textarea id={`today-task-${name}`} rows="4" cols="30"></textarea>
+        </div>
+      );
       break;
+    default:
   }
   return task === true ? taskTemplate : null;
 };

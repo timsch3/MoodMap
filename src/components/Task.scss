@@ -5,4 +5,9 @@
   label {
     margin-right: var(--x-label-input);
   }
+  textarea {
+    min-width: 50%;
+    max-width: 95%;
+    max-height: 50vh;
+  }
 }
