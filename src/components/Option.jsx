@@ -11,7 +11,7 @@ const Option = (props) => {
 
   useEffect(() => {
     dataHandling.saveLocal(`option-${name}`, option);
-  }, [option, name]);
+  }, [name, option]);
 
   return (
     <div id="options-option">

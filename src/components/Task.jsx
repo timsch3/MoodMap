@@ -1,11 +1,25 @@
 import "./Task.scss";
 import * as dataHandling from "../functions/dataHandling";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Task = (props) => {
   const { name, type } = props;
 
   const [task] = useState(dataHandling.loadLocal(`option-${name}`) || false);
+  const [taskDataBoolean, setTaskDataBoolean] = useState(
+    dataHandling.loadLocal(`task-${name}`) || false
+  );
+  const [taskDataString, setTaskDataString] = useState(
+    dataHandling.loadLocal(`task-${name}`) || ""
+  );
+
+  useEffect(() => {
+    dataHandling.saveLocal(`task-${name}`, taskDataBoolean);
+  }, [name, taskDataBoolean]);
+
+  useEffect(() => {
+    dataHandling.saveLocal(`task-${name}`, taskDataString);
+  }, [name, taskDataString]);
 
   let taskTemplate;
 
@@ -14,7 +28,11 @@ const Task = (props) => {
       taskTemplate = (
         <div id="today-task">
           <label htmlFor={`today-task-${name}`}>{name}</label>
-          <select id={`today-task-${name}`}>
+          <select
+            id={`today-task-${name}`}
+            onChange={(e) => setTaskDataString(e.target.value)}
+            value={taskDataString}
+          >
             <option value="please-select">--- Please select ---</option>
             <option value="very-good">Very good</option>
             <option value="good">Good</option>
@@ -29,7 +47,12 @@ const Task = (props) => {
       taskTemplate = (
         <div id="today-task">
           <label htmlFor={`today-task-${name}`}>{name}</label>
-          <input type="checkbox" id={`today-task-${name}`} />
+          <input
+            type="checkbox"
+            id={`today-task-${name}`}
+            onChange={() => setTaskDataBoolean(!taskDataBoolean)}
+            checked={taskDataBoolean}
+          />
         </div>
       );
       break;
@@ -38,7 +61,13 @@ const Task = (props) => {
         <div id="today-task">
           <label htmlFor={`today-task-${name}`}>{name}</label>
           <br />
-          <textarea id={`today-task-${name}`} rows="4" cols="30"></textarea>
+          <textarea
+            id={`today-task-${name}`}
+            rows="4"
+            cols="30"
+            onChange={(e) => setTaskDataString(e.target.value)}
+            value={taskDataString}
+          ></textarea>
         </div>
       );
       break;

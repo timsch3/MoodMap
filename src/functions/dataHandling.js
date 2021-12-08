@@ -1,7 +1,10 @@
 export function saveLocal(key, string) {
-  return localStorage.setItem(key, string);
+  localStorage.setItem(key, string);
 }
 
 export function loadLocal(key) {
-  return JSON.parse(localStorage.getItem(key));
+  let loadedData = localStorage.getItem(key);
+  if (loadedData === "true") return true;
+  else if (loadedData === "false") return false;
+  else return loadedData;
 }
