@@ -1,5 +1,4 @@
 import "./Option.scss";
-
 import { useEffect } from "react";
 
 const OptionForced = (props) => {

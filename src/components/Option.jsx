@@ -1,16 +1,16 @@
 import "./Option.scss";
-
+import * as dataHandling from "../functions/dataHandling";
 import { useState, useEffect } from "react";
 
 const Option = (props) => {
   const { name } = props;
 
   const [option, setOption] = useState(
-    JSON.parse(localStorage.getItem(`option-${name}`)) || false
+    dataHandling.loadLocal(`option-${name}`) || false
   );
 
   useEffect(() => {
-    localStorage.setItem(`option-${name}`, option);
+    dataHandling.saveLocal(`option-${name}`, option);
   }, [option, name]);
 
   return (
