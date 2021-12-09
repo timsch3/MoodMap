@@ -1,25 +1,26 @@
 import "./Task.scss";
 import * as dataHandling from "../functions/dataHandling";
+import * as dateHandling from "../functions/dateHandling";
 import { useState, useEffect } from "react";
 
 const Task = (props) => {
   const { name, type } = props;
 
-  const [task] = useState(dataHandling.loadLocal(`option-${name}`) || false);
-  const [taskDataBoolean, setTaskDataBoolean] = useState(
-    dataHandling.loadLocal(`task-${name}`) || false
-  );
-  const [taskDataString, setTaskDataString] = useState(
-    dataHandling.loadLocal(`task-${name}`) || ""
+  const emptyTaskValue = type === "select" || "text" ? "" : false;
+
+  const [task] = useState(dataHandling.load(`option-${name}`) || false);
+
+  const [taskData, setTaskData] = useState(
+    dataHandling.load(`task-${name}-${dateHandling.getCurrentDate(true)}`) ||
+      emptyTaskValue
   );
 
   useEffect(() => {
-    dataHandling.saveLocal(`task-${name}`, taskDataBoolean);
-  }, [name, taskDataBoolean]);
-
-  useEffect(() => {
-    dataHandling.saveLocal(`task-${name}`, taskDataString);
-  }, [name, taskDataString]);
+    dataHandling.save(
+      `task-${name}-${dateHandling.getCurrentDate(true)}`,
+      taskData
+    );
+  }, [name, taskData]);
 
   let taskTemplate;
 
@@ -30,8 +31,8 @@ const Task = (props) => {
           <label htmlFor={`today-task-${name}`}>{name}</label>
           <select
             id={`today-task-${name}`}
-            onChange={(e) => setTaskDataString(e.target.value)}
-            value={taskDataString}
+            onChange={(e) => setTaskData(e.target.value)}
+            value={taskData}
           >
             <option value="please-select">--- Please select ---</option>
             <option value="very-good">Very good</option>
@@ -50,8 +51,8 @@ const Task = (props) => {
           <input
             type="checkbox"
             id={`today-task-${name}`}
-            onChange={() => setTaskDataBoolean(!taskDataBoolean)}
-            checked={taskDataBoolean}
+            onChange={() => setTaskData(!taskData)}
+            checked={taskData}
           />
         </div>
       );
@@ -65,8 +66,8 @@ const Task = (props) => {
             id={`today-task-${name}`}
             rows="4"
             cols="30"
-            onChange={(e) => setTaskDataString(e.target.value)}
-            value={taskDataString}
+            onChange={(e) => setTaskData(e.target.value)}
+            value={taskData}
           ></textarea>
         </div>
       );

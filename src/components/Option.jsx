@@ -6,11 +6,11 @@ const Option = (props) => {
   const { name } = props;
 
   const [option, setOption] = useState(
-    dataHandling.loadLocal(`option-${name}`) || false
+    dataHandling.load(`option-${name}`) || false
   );
 
   useEffect(() => {
-    dataHandling.saveLocal(`option-${name}`, option);
+    dataHandling.save(`option-${name}`, option);
   }, [name, option]);
 
   return (
