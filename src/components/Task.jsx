@@ -8,14 +8,15 @@ const Task = (props) => {
 
   const emptyTaskValue = type === "select" || "text" ? "" : false;
 
-  const [task] = useState(dataHandling.load(`option-${name}`) || false);
+  const [task] = useState(dataHandling.load(`option-${name}`) || false); // option active?
 
-  const [taskData, setTaskData] = useState(
+  let [taskData, setTaskData] = useState(
     dataHandling.load(`task-${name}-${dateHandling.getCurrentDate(true)}`) ||
       emptyTaskValue
   );
 
   useEffect(() => {
+    console.log("useEffect, taskData: ", taskData);
     dataHandling.save(
       `task-${name}-${dateHandling.getCurrentDate(true)}`,
       taskData
