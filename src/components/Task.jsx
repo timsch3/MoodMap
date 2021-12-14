@@ -16,7 +16,6 @@ const Task = (props) => {
   );
 
   useEffect(() => {
-    console.log("useEffect, taskData: ", taskData);
     dataHandling.save(
       `task-${name}-${dateHandling.getCurrentDate(true)}`,
       taskData

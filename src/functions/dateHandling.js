@@ -4,5 +4,5 @@ export function getCurrentDate(UTC) {
   let todayUTC = new Date(today.toUTCString());
   return UTC === true
     ? todayUTC.toDateString().replace(/\s/g, "-")
-    : todayUTC.toLocaleDateString().replace(/\s/g, "-");
+    : todayUTC.toLocaleDateString();
 }
