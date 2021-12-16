@@ -7,6 +7,7 @@ const Today = (props) => {
     <main>
       <p>{dateHandling.getCurrentDate()}</p>
       <h2>What's up today?</h2>
+      <Task name="Mood" type="text" />
       {options.map((el, i) => {
         return el.active ? (
           <Task name={el.name} type={el.type} key={i} />
