@@ -10,11 +10,11 @@ const Task = (props) => {
 
   const [task] = useState(dataHandling.load(`option-${name}`) || false); // option active?
 
+  // load data in state / save data with useEffect
   let [taskData, setTaskData] = useState(
     dataHandling.load(`task-${name}-${dateHandling.getCurrentDate(true)}`) ||
       emptyTaskValue
   );
-
   useEffect(() => {
     dataHandling.save(
       `task-${name}-${dateHandling.getCurrentDate(true)}`,
@@ -22,8 +22,7 @@ const Task = (props) => {
     );
   }, [name, taskData]);
 
-  let taskTemplate;
-
+  let taskTemplate; // render component based on its type
   switch (type) {
     case "select":
       taskTemplate = (

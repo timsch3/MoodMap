@@ -1,11 +1,12 @@
 import "./Option.scss";
 import { useEffect } from "react";
+import * as dataHandling from "../functions/dataHandling";
 
 const OptionForced = (props) => {
   const { name } = props;
 
   useEffect(() => {
-    localStorage.setItem(`option-${name}`, true);
+    dataHandling.save(`option-${name}`, true);
   }, [name]);
 
   return (

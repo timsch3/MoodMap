@@ -8,11 +8,13 @@ function App() {
   const [options, setOptions] = useState([
     { name: "Notes", active: false, type: "text" },
     { name: "Work", active: false, type: "check" },
-    { name: "Exercise", active: false, type: "select" },
+    { name: "Exercise", active: false, type: "check" },
   ]);
+
   const [activePage, setActivePage] = useState(
     <Options options={options} setOptions={setOptions} />
   );
+
   return (
     <div>
       <h1>MoodMap</h1>

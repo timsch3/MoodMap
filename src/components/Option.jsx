@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import * as dataHandling from "../functions/dataHandling";
 import "./Option.scss";
 
 const Option = (props) => {
@@ -18,6 +19,10 @@ const Option = (props) => {
         }
       } else return elt;
     });
+    dataHandling.save(
+      `option-${changedOptions[option].name}`,
+      changedOptions[option].active
+    );
     setOptions(changedOptions);
     setOptionsState(changedOptions);
   }
