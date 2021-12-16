@@ -1,23 +1,30 @@
 import "./App.scss";
-
 import { useState } from "react";
-
 import Options from "./pages/Options";
 import Today from "./pages/Today";
 import Stats from "./pages/Stats";
 
 function App() {
-  const [activePage, setActivePage] = useState(<Options />);
-
+  const [options, setOptions] = useState([
+    { name: "Notes", active: false, type: "text" },
+    { name: "Work", active: false, type: "check" },
+    { name: "Exercise", active: false, type: "select" },
+  ]);
+  const [activePage, setActivePage] = useState(
+    <Options options={options} setOptions={setOptions} />
+  );
   return (
     <div>
       <h1>MoodMap</h1>
+
       <nav id="topNav">
         <ul>
           <li>
             <button
               onClick={() => {
-                setActivePage(<Options />);
+                setActivePage(
+                  <Options options={options} setOptions={setOptions} />
+                );
               }}
             >
               Options
@@ -26,7 +33,7 @@ function App() {
           <li>
             <button
               onClick={() => {
-                setActivePage(<Today />);
+                setActivePage(<Today options={options} />);
               }}
             >
               Today
@@ -43,6 +50,7 @@ function App() {
           </li>
         </ul>
       </nav>
+
       {activePage}
     </div>
   );

@@ -1,15 +1,17 @@
 import Task from "../components/Task";
 import * as dateHandling from "../functions/dateHandling";
 
-const Today = () => {
+const Today = (props) => {
+  const { options } = props;
   return (
     <main>
       <p>{dateHandling.getCurrentDate()}</p>
       <h2>What's up today?</h2>
-      <Task name="Mood" type="select" />
-      <Task name="Notes" type="text" />
-      <Task name="Work" type="check" />
-      <Task name="Exercise" type="check" />
+      {options.map((el, i) => {
+        return el.active ? (
+          <Task name={el.name} type={el.type} key={i} />
+        ) : null;
+      })}
     </main>
   );
 };
