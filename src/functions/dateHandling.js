@@ -6,3 +6,13 @@ export function getCurrentDate(UTC) {
     ? todayUTC.toDateString().replace(/\s/g, "-")
     : todayUTC.toLocaleDateString();
 }
+
+export function getDaysInMonthUTC(month, year) {
+  var date = new Date(Date.UTC(year, month, 1));
+  var days = [];
+  while (date.getUTCMonth() === month) {
+    days.push(new Date(date).toDateString().replace(/\s/g, "-"));
+    date.setUTCDate(date.getUTCDate() + 1);
+  }
+  return days;
+}

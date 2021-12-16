@@ -9,6 +9,8 @@
   --bg-color2: hsl(0, 0%, 15%);
   --font-color1: hsl(0, 0%, 95%);
   --border-color1: hsl(0, 0%, 20%);
+  /* paddings */
+  --y-padding: 1rem;
   /* margins */
   --x-label-input: 0.7rem;
   --y-list-gap: 1rem;
