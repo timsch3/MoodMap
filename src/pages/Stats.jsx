@@ -2,28 +2,30 @@ import * as dateHandling from "../functions/dateHandling";
 import * as dataHandling from "../functions/dataHandling";
 
 const Stats = () => {
-  let today = new Date();
+  let currentMonthDates = dateHandling.getDaysInCurrentMonth();
+  let currentMonthData = [];
 
-  let lastMonth = dateHandling.getDaysInMonthUTC(
-    today.getUTCMonth(),
-    today.getUTCFullYear()
-  );
-
-  let trackedData = [];
-  lastMonth.forEach((el) => {
-    if (dataHandling.load("task-Mood-" + el) !== null)
-      trackedData.push({
+  currentMonthDates.forEach((el) => {
+    if (
+      dataHandling.load("task-Mood-" + dateHandling.convertToSaveFormat(el)) !==
+      null
+    ) {
+      currentMonthData.push({
         date: el,
-        value: String(dataHandling.load("task-Mood-" + el)),
+        value: String(
+          dataHandling.load("task-Mood-" + dateHandling.convertToSaveFormat(el))
+        ),
       });
+    }
   });
+  currentMonthData.reverse();
 
   return (
     <main>
       <h2>Stats</h2>
       <p style={{ textDecoration: "underline" }}>Your mood this month:</p>
       <ul style={{ listStyle: "none", lineHeight: "2rem" }}>
-        {trackedData.map((el, i) => (
+        {currentMonthData.map((el, i) => (
           <li
             key={i}
             style={{ display: "flex", justifyContent: "space-between" }}

@@ -7,12 +7,17 @@ export function getCurrentDate(UTC) {
     : todayUTC.toLocaleDateString();
 }
 
-export function getDaysInMonthUTC(month, year) {
-  var date = new Date(Date.UTC(year, month, 1));
+export function getDaysInCurrentMonth() {
+  var today = new Date();
+  var date = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), 1));
   var days = [];
-  while (date.getUTCMonth() === month) {
-    days.push(new Date(date).toDateString().replace(/\s/g, "-"));
+  while (date.getUTCMonth() === today.getUTCMonth()) {
+    days.push(new Date(date));
     date.setUTCDate(date.getUTCDate() + 1);
   }
   return days;
+}
+
+export function convertToSaveFormat(date) {
+  return date.toDateString().replace(/\s/g, "-");
 }
