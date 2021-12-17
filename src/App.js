@@ -34,7 +34,13 @@ function App() {
 
       <nav id="topNav">
         <ul>
-          <li>
+          <li
+            style={
+              activePage.type.name === "Options"
+                ? { borderBottom: "2.5px solid white" }
+                : { border: "none" }
+            }
+          >
             <button
               onClick={() => {
                 setActivePage(
@@ -45,7 +51,13 @@ function App() {
               Options
             </button>
           </li>
-          <li>
+          <li
+            style={
+              activePage.type.name === "Today"
+                ? { borderBottom: "2.5px solid white" }
+                : { border: "none" }
+            }
+          >
             <button
               onClick={() => {
                 setActivePage(<Today options={options} />);
@@ -54,7 +66,13 @@ function App() {
               Today
             </button>
           </li>
-          <li>
+          <li
+            style={
+              activePage.type.name === "Stats"
+                ? { borderBottom: "2.5px solid white" }
+                : { border: "none" }
+            }
+          >
             <button
               onClick={() => {
                 setActivePage(<Stats />);
