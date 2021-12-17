@@ -1,6 +1,10 @@
 # MoodMap
 
-This is currently only saving data using the local storage of the browser/device the site viewed on.
+❗ This is currently only saving data using the local storage of the browser/device on which the site viewed on. After clearing browser data everything will be lost.
+
+✔ What already works:
+- Tracking mood and notes for every day and viewing a summary for the current month
+
 
 ## Next steps:
 
