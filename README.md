@@ -1,7 +1,6 @@
 # Next steps:
 
-- Make reusable components for different types of things to track
-- Get current date and record data for statistics page
+- Make mood statistics clickable and show notes and other data
 
 ## Later
 
