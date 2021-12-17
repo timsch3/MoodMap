@@ -5,6 +5,8 @@
 ✔ What already works:
 - Tracking mood and notes for every day and viewing a summary for the current month
 
+Try it here: https://mood-map.netlify.app/
+
 
 ## Next steps:
 
