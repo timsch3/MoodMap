@@ -18,28 +18,28 @@ const Stats = () => {
       });
     }
   });
-  currentMonthData.reverse();
+
+  let goodDaysCurrentMonth = 0;
+  let regularDaysCurrentMonth = 0;
+  let badDaysCurrentMonth = 0;
+  currentMonthData.forEach((el) => {
+    if (el.value === "good" || el.value === "very-good") goodDaysCurrentMonth++;
+    else if (el.value === "indifferent") regularDaysCurrentMonth++;
+    else if (el.value === "bad" || el.value === "very-bad")
+      badDaysCurrentMonth++;
+  });
+
+  let untrackedDaysMonth =
+    currentMonthDates.length -
+    (goodDaysCurrentMonth + regularDaysCurrentMonth + badDaysCurrentMonth);
 
   return (
     <main>
       <h2>Stats</h2>
-      <p style={{ textDecoration: "underline" }}>Your mood this month:</p>
-      <ul style={{ listStyle: "none", lineHeight: "2rem" }}>
-        {currentMonthData.map((el, i) => (
-          <li
-            key={i}
-            style={{ display: "flex", justifyContent: "space-between" }}
-          >
-            <div id="stats-li-left">
-              {new Date(el.date).toLocaleDateString()}
-            </div>
-            <div id="stats-li-right">
-              {el.value.charAt(0).toUpperCase() +
-                el.value.slice(1).replace(/-/g, " ")}
-            </div>
-          </li>
-        ))}
-      </ul>
+      <p>Good days this month: {goodDaysCurrentMonth}</p>
+      <p>Regular days this month: {regularDaysCurrentMonth}</p>
+      <p>Bad days this month: {badDaysCurrentMonth}</p>
+      <p>Untracked days this month: {untrackedDaysMonth}</p>
     </main>
   );
 };
