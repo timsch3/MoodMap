@@ -1,7 +1,16 @@
-# Next steps:
+# MoodMap
 
-- Make reusable components for different types of things to track
-- Get current date and record data for statistics page
+❗ This is currently only saving data using the local storage of the browser/device on which the site viewed on. After clearing browser data everything will be lost.
+
+✔ What already works:
+- Tracking mood and notes for every day and viewing a summary for the current month
+
+Try it here: https://mood-map.netlify.app/
+
+
+## Next steps:
+
+- Make mood statistics clickable and show notes and other data
 
 ## Later
 
