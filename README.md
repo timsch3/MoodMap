@@ -1,4 +1,8 @@
-# Next steps:
+# MoodMap
+
+This is currently only saving data using the local storage of the browser/device the site viewed on.
+
+## Next steps:
 
 - Make mood statistics clickable and show notes and other data
 
