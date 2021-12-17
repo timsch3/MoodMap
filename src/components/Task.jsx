@@ -34,11 +34,11 @@ const Task = (props) => {
             value={taskData}
           >
             <option value="please-select">--- Please select ---</option>
-            <option value="very-good">Very good</option>
-            <option value="good">Good</option>
-            <option value="indifferent">Indifferent</option>
-            <option value="bad">Bad</option>
-            <option value="very-bad">Very bad</option>
+            <option value="very-good">😁 Very good</option>
+            <option value="good">🙂 Good</option>
+            <option value="indifferent">😐 Indifferent</option>
+            <option value="bad">🙁 Bad</option>
+            <option value="very-bad">😦 Very bad</option>
           </select>
         </div>
       );

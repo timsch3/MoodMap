@@ -7,8 +7,10 @@
   /* colors */
   --bg-color1: hsl(0, 0%, 10%);
   --bg-color2: hsl(0, 0%, 15%);
+  --bg-color3: hsl(0, 0%, 20%);
   --font-color1: hsl(0, 0%, 95%);
   --border-color1: hsl(0, 0%, 20%);
+  --border-color2: hsl(0, 0%, 40%);
   /* paddings */
   --y-padding: 1rem;
   /* margins */
