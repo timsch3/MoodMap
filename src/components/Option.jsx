@@ -32,15 +32,15 @@ const Option = (props) => {
   }, [options, optionsState]);
 
   return (
-    <div id="options-option">
-      <label htmlFor={`options-option-${name}`}>{name}</label>
+    <label id="options-option" htmlFor={`options-option-${name}`}>
+      {name}
       <input
         type="checkbox"
         id={`options-option-${name}`}
         onChange={() => handleOptions()}
         checked={options[option].active}
       />
-    </div>
+    </label>
   );
 };
 

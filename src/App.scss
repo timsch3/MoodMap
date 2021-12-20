@@ -13,8 +13,17 @@ h1 {
     justify-content: center;
     list-style: none;
     gap: 1.5rem;
-    button {
+    li {
+      text-align: center;
+      background-color: var(--button-bg-color);
+      min-width: 20%;
       padding: 0.25rem 0.5rem;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+    }
+    li:hover {
+      color: var(--button-text-color-hover);
+      background-color: var(--button-bg-color-hover);
     }
   }
 }

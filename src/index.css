@@ -8,7 +8,10 @@
   --bg-color1: hsl(0, 0%, 10%);
   --bg-color2: hsl(0, 0%, 15%);
   --bg-color3: hsl(0, 0%, 20%);
-  --font-color1: hsl(0, 0%, 95%);
+  --button-bg-color: hsl(0, 0%, 22%);
+  --button-bg-color-hover: hsl(0, 0%, 95%);
+  --button-text-color-hover: hsl(0, 0%, 5%);
+  --text-color1: hsl(0, 0%, 95%);
   --border-color1: hsl(0, 0%, 20%);
   --border-color2: hsl(0, 0%, 40%);
   /* paddings */
@@ -34,5 +37,5 @@ body {
   margin-top: 5rem;
   width: 400px;
   background-color: var(--bg-color2);
-  color: var(--font-color1);
+  color: var(--text-color1);
 }

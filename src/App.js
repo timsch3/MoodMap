@@ -40,16 +40,13 @@ function App() {
                 ? { borderBottom: "2.5px solid white" }
                 : { border: "none" }
             }
+            onClick={() => {
+              setActivePage(
+                <Options options={options} setOptions={setOptions} />
+              );
+            }}
           >
-            <button
-              onClick={() => {
-                setActivePage(
-                  <Options options={options} setOptions={setOptions} />
-                );
-              }}
-            >
-              Options
-            </button>
+            Options
           </li>
           <li
             style={
@@ -57,14 +54,11 @@ function App() {
                 ? { borderBottom: "2.5px solid white" }
                 : { border: "none" }
             }
+            onClick={() => {
+              setActivePage(<Today options={options} />);
+            }}
           >
-            <button
-              onClick={() => {
-                setActivePage(<Today options={options} />);
-              }}
-            >
-              Today
-            </button>
+            Today
           </li>
           <li
             style={
@@ -72,14 +66,11 @@ function App() {
                 ? { borderBottom: "2.5px solid white" }
                 : { border: "none" }
             }
+            onClick={() => {
+              setActivePage(<Stats />);
+            }}
           >
-            <button
-              onClick={() => {
-                setActivePage(<Stats />);
-              }}
-            >
-              Stats
-            </button>
+            Stats
           </li>
         </ul>
       </nav>
