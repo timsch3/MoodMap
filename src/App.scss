@@ -14,6 +14,7 @@ h1 {
     list-style: none;
     gap: 1.5rem;
     li {
+      box-sizing: border-box;
       text-align: center;
       background-color: var(--button-bg-color);
       min-width: 20%;

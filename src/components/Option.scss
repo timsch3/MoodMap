@@ -6,6 +6,7 @@
   border-bottom: 1px solid var(--border-color1);
   margin-bottom: var(--y-list-gap);
   padding-bottom: var(--y-padding);
+  cursor: pointer;
   input[type="checkbox"] {
     transform: translateX(var(--x-label-input));
   }
