@@ -3,13 +3,14 @@
 ❗ This is currently only saving data using the local storage of the browser/device on which the site viewed on. After clearing browser data everything will be lost.
 
 ✔ What already works:
+
 - Tracking mood and notes for every day and viewing a summary for the current month
 
 Try it here: https://mood-map.netlify.app/
 
-
 ## Next steps:
 
+- Save active page state
 - Make mood statistics clickable and show notes and other data
 
 ## Later
