@@ -6,7 +6,7 @@ const Today = (props) => {
   return (
     <main>
       <p>{dateHandling.getCurrentDate()}</p> {/* get date in local format */}
-      <h2>What's up today?</h2>
+      <h2>How are you feeling today?</h2>
       <Task name="Mood" type="select" />
       {options.map((el, i) => {
         return el.active ? (

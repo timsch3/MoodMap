@@ -6,7 +6,7 @@ const Options = (props) => {
 
   return (
     <main>
-      <h2>Choose what to keep track of:</h2>
+      <h2>What do you want to track?</h2>
       <OptionForced name="Mood" />
       {options.map((el, i) => (
         <Option
