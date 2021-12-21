@@ -24,25 +24,6 @@ const Task = (props) => {
 
   let taskTemplate; // render component based on its type
   switch (type) {
-    case "select":
-      taskTemplate = (
-        <div id="today-task">
-          <label htmlFor={`today-task-${name}`}>{name}</label>
-          <select
-            id={`today-task-${name}`}
-            onChange={(e) => setTaskData(e.target.value)}
-            value={taskData}
-          >
-            <option value="please-select">--- Please select ---</option>
-            <option value="very-good">😁 Very good</option>
-            <option value="good">🙂 Good</option>
-            <option value="indifferent">😐 Indifferent</option>
-            <option value="bad">🙁 Bad</option>
-            <option value="very-bad">😦 Very bad</option>
-          </select>
-        </div>
-      );
-      break;
     case "check":
       taskTemplate = (
         <div id="today-task">
@@ -60,7 +41,7 @@ const Task = (props) => {
       taskTemplate = (
         <div id="today-task">
           <label htmlFor={`today-task-${name}`}>{name}</label>
-          <br />
+          <p></p>
           <textarea
             id={`today-task-${name}`}
             rows="4"

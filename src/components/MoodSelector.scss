@@ -1,0 +1,27 @@
+#today-mood-selector-overlay {
+  cursor: pointer;
+}
+#today-mood-selector {
+  display: flex;
+  justify-content: center;
+  min-height: 200px;
+  border-bottom: 1px solid var(--border-color1);
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background-color: var(--bg-color2);
+    min-width: 150px;
+    min-height: 150px;
+    font-size: 3.5rem;
+    border: 5px solid var(--border-color1);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 200ms;
+    cursor: pointer;
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
