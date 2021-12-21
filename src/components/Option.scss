@@ -4,8 +4,7 @@
   align-items: center;
   line-height: 2rem;
   border-bottom: 1px solid var(--border-color1);
-  margin-bottom: var(--y-list-gap);
-  padding-bottom: var(--y-padding);
+  padding: var(--y-padding) 0;
   cursor: pointer;
   input[type="checkbox"] {
     width: 1rem;
