@@ -1,16 +1,22 @@
-export let currentMonthName = new Date().toLocaleString(undefined, {
-  month: "long",
-});
+let today = new Date();
+
+export let currentMonth = today.toLocaleDateString("en-US", { month: "long" });
 
 export function convertToSaveFormat(date) {
   return date.toDateString().replace(/\s/g, "-");
 }
 
 export function getCurrentDate(UTC) {
-  let today = new Date();
   // UTC format for saving unique strings while keeping local dates correct
   let todayUTC = new Date(today.toUTCString());
-  return UTC === true ? convertToSaveFormat(todayUTC) : todayUTC.toDateString();
+  return UTC === true
+    ? convertToSaveFormat(todayUTC)
+    : todayUTC.toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      });
 }
 
 export function getDaysInCurrentMonth() {

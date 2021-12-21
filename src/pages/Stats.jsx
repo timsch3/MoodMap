@@ -75,7 +75,7 @@ const Stats = () => {
   return (
     <main>
       <h2>Stats</h2>
-      <h3>{dateHandling.currentMonthName}</h3>
+      <h3>{dateHandling.currentMonth}</h3>
       <div className="stats-container">
         <div className="stats-sub-container">
           <div className="stats-smiley">😁</div>
