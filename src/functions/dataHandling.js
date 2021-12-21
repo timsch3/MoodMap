@@ -1,6 +1,3 @@
-import * as dateHandling from "../functions/dateHandling";
-import * as dataHandling from "../functions/dataHandling";
-
 //==================== SAVING AND LOADING
 export function save(key, string) {
   localStorage.setItem("MoodMapByTimSch-" + key, string);

@@ -32,13 +32,11 @@ function App() {
     <div>
       <h1>MoodMap</h1>
 
-      <nav id="topNav">
+      <nav id="top-nav">
         <ul>
           <li
-            style={
-              activePage.type.name === "Options"
-                ? { borderBottom: "2.5px solid white" }
-                : { border: "none" }
+            className={
+              activePage.type.name === "Options" ? "top-nav-underline" : ""
             }
             onClick={() => {
               setActivePage(
@@ -49,10 +47,8 @@ function App() {
             Options
           </li>
           <li
-            style={
-              activePage.type.name === "Today"
-                ? { borderBottom: "2.5px solid white" }
-                : { border: "none" }
+            className={
+              activePage.type.name === "Today" ? "top-nav-underline" : ""
             }
             onClick={() => {
               setActivePage(<Today options={options} />);
@@ -61,10 +57,8 @@ function App() {
             Today
           </li>
           <li
-            style={
-              activePage.type.name === "Stats"
-                ? { borderBottom: "2.5px solid white" }
-                : { border: "none" }
+            className={
+              activePage.type.name === "Stats" ? "top-nav-underline" : ""
             }
             onClick={() => {
               setActivePage(<Stats />);

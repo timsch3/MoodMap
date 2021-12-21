@@ -12,6 +12,7 @@ Try it here: https://timschilling.net/moodmap/
 
 - Make whole option element clickable on the Today page as on Options page
 - Save active page state
+- Make mood selector close when clicking outside (usability issue when choosing the already active option)
 - Make mood statistics clickable and show notes and other data
 
 ## Later
