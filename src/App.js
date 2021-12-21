@@ -28,6 +28,8 @@ function App() {
     <Options options={options} setOptions={setOptions} />
   );
 
+  const [activePageID, setActivePageID] = useState(1); // for setting CSS class
+
   return (
     <div>
       <h1>MoodMap</h1>
@@ -35,33 +37,30 @@ function App() {
       <nav id="top-nav">
         <ul>
           <li
-            className={
-              activePage.type.name === "Options" ? "top-nav-underline" : ""
-            }
+            className={activePageID === 1 ? "top-nav-underline" : ""}
             onClick={() => {
               setActivePage(
                 <Options options={options} setOptions={setOptions} />
               );
+              setActivePageID(1);
             }}
           >
             Options
           </li>
           <li
-            className={
-              activePage.type.name === "Today" ? "top-nav-underline" : ""
-            }
+            className={activePageID === 2 ? "top-nav-underline" : ""}
             onClick={() => {
               setActivePage(<Today options={options} />);
+              setActivePageID(2);
             }}
           >
             Today
           </li>
           <li
-            className={
-              activePage.type.name === "Stats" ? "top-nav-underline" : ""
-            }
+            className={activePageID === 3 ? "top-nav-underline" : ""}
             onClick={() => {
               setActivePage(<Stats />);
+              setActivePageID(3);
             }}
           >
             Stats
