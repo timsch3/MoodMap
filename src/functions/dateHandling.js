@@ -1,6 +1,9 @@
 let today = new Date();
 
-export let currentMonth = today.toLocaleDateString("en-US", { month: "long" });
+export let currentMonth = today.toLocaleDateString("en-US", {
+  month: "long",
+  year: "numeric",
+});
 
 export function convertToSaveFormat(date) {
   return date.toDateString().replace(/\s/g, "-");
