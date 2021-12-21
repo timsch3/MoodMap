@@ -4,7 +4,7 @@ import * as dateHandling from "../functions/dateHandling";
 import { useState, useEffect } from "react";
 
 const MoodSelector = () => {
-  // load data in state / save data with useEffect
+  // load data in state, save data with useEffect
   let [taskData, setTaskData] = useState(
     dataHandling.load(`task-Mood-${dateHandling.getCurrentDate(true)}`)
   );
@@ -15,59 +15,69 @@ const MoodSelector = () => {
     );
   }, [taskData]);
 
+  // handle the mood selection menu
+  let [moodMenuOverlayActive, setMoodMenuOverlayActive] = useState(false);
+  let [moodOptionClass, setMoodOptionClass] = useState(
+    "today-mood-selector-option"
+  );
   function openMoodMenu() {
-    const overlay = document.getElementById("today-mood-selector-overlay");
-    const divs = document.querySelectorAll("#today-mood-selector > div");
-    const ps = document.querySelectorAll("#today-mood-selector > div > p");
-
-    overlay.style.cursor = "default";
-    overlay.style.pointerEvents = "none";
-    divs.forEach((div) => {
-      div.style.pointerEvents = "all";
-      div.style.minWidth = div.style.minHeight = "100px";
-      div.style.fontSize = "2.5rem";
-    });
-    ps.forEach((p) => {
-      p.style.fontSize = "0.8rem";
-    });
-    divs[0].style.transform = "translateY(-110%)";
-    divs[1].style.transform = "translateX(-110%)";
-    divs[3].style.transform = "translateX(110%)";
-    divs[4].style.transform = "translateY(110%)";
+    setMoodOptionClass(
+      "today-mood-selector-option today-mood-selector-option-active"
+    );
+    setMoodMenuOverlayActive(true);
   }
-
-  function closeMoodMenu(selectedMood) {
-    const overlay = document.getElementById("today-mood-selector-overlay");
-    const divs = document.querySelectorAll("#today-mood-selector > div");
-    const ps = document.querySelectorAll("#today-mood-selector > div > p");
-
-    divs.forEach((div) => div.removeAttribute("style"));
-    ps.forEach((p) => p.removeAttribute("style"));
-    overlay.style.cursor = "pointer";
-    overlay.style.pointerEvents = "all";
-    setTaskData(selectedMood);
-  }
+  useEffect(() => {
+    setMoodMenuOverlayActive(false);
+    setMoodOptionClass("today-mood-selector-option");
+  }, [taskData]);
 
   return (
-    <div id="today-mood-selector-overlay" onClick={() => openMoodMenu()}>
+    <div
+      onClick={() => openMoodMenu()}
+      style={
+        moodMenuOverlayActive
+          ? { pointerEvents: "none", cursor: "default" }
+          : { pointerEvents: "all", cursor: "pointer" }
+      }
+    >
       <div id="today-mood-selector">
-        <div onClick={() => closeMoodMenu("very-good")}>
+        <div
+          onClick={() => setTaskData("very-good")}
+          className={moodOptionClass}
+          style={taskData === "very-good" ? { zIndex: "2" } : { zIndex: "1" }}
+        >
           😁
           <p>Very good</p>
         </div>
-        <div onClick={() => closeMoodMenu("good")}>
+        <div
+          onClick={() => setTaskData("good")}
+          className={moodOptionClass}
+          style={taskData === "good" ? { zIndex: "2" } : { zIndex: "1" }}
+        >
           🙂
           <p>Good</p>
         </div>
-        <div onClick={() => closeMoodMenu("indifferent")}>
+        <div
+          onClick={() => setTaskData("indifferent")}
+          className={moodOptionClass}
+          style={taskData === "indifferent" ? { zIndex: "2" } : { zIndex: "1" }}
+        >
           😐
           <p>Indifferent</p>
         </div>
-        <div onClick={() => closeMoodMenu("bad")}>
+        <div
+          onClick={() => setTaskData("bad")}
+          className={moodOptionClass}
+          style={taskData === "bad" ? { zIndex: "2" } : { zIndex: "1" }}
+        >
           🙁
           <p>Bad</p>
         </div>
-        <div onClick={() => closeMoodMenu("very-bad")}>
+        <div
+          onClick={() => setTaskData("very-bad")}
+          className={moodOptionClass}
+          style={taskData === "very-bad" ? { zIndex: "2" } : { zIndex: "1" }}
+        >
           😦
           <p>Very bad</p>
         </div>

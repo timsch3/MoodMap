@@ -12,44 +12,39 @@ const Stats = () => {
           <div className="stats-smiley">😁</div>
           <p>{dataHandling.goodDaysCurrentMonth}</p>
           <div className="stats-info">
-            Mood marked as "very good" on {dataHandling.goodDaysCurrentMonth}{" "}
-            days in this month.
+            {dataHandling.goodDaysCurrentMonth} very good days this month.
           </div>
         </div>
 
         <div className="stats-sub-container">
           <div className="stats-smiley">🙂</div>
-          <p>{dataHandling.goodDaysCurrentMonth}</p>{" "}
+          <p>{dataHandling.goodDaysCurrentMonth}</p>
           <div className="stats-info">
-            Mood marked as "good" on {dataHandling.goodDaysCurrentMonth} days in
-            this month.
+            {dataHandling.goodDaysCurrentMonth} good days this month.
           </div>
         </div>
 
         <div className="stats-sub-container">
           <div className="stats-smiley">😐</div>
-          <p>{dataHandling.regularDaysCurrentMonth}</p>{" "}
+          <p>{dataHandling.regularDaysCurrentMonth}</p>
           <div className="stats-info">
-            Mood marked as "indifferent" on{" "}
-            {dataHandling.regularDaysCurrentMonth} days in this month.
+            {dataHandling.regularDaysCurrentMonth} regular days this month.
           </div>
         </div>
 
         <div className="stats-sub-container">
           <div className="stats-smiley">🙁</div>
-          <p>{dataHandling.badDaysCurrentMonth}</p>{" "}
+          <p>{dataHandling.badDaysCurrentMonth}</p>
           <div className="stats-info">
-            Mood marked as "bad" on {dataHandling.badDaysCurrentMonth} days in
-            this month.
+            {dataHandling.badDaysCurrentMonth} bad days this month.
           </div>
         </div>
 
         <div className="stats-sub-container">
           <div className="stats-smiley">😦</div>
-          <p>{dataHandling.veryBadDaysCurrentMonth}</p>{" "}
+          <p>{dataHandling.veryBadDaysCurrentMonth}</p>
           <div className="stats-info">
-            Mood marked as "very bad" on {dataHandling.veryBadDaysCurrentMonth}{" "}
-            days in this month.
+            {dataHandling.veryBadDaysCurrentMonth} very bad days this month.
           </div>
         </div>
 
@@ -57,8 +52,7 @@ const Stats = () => {
           <div className="stats-smiley">❌</div>
           <p>{dataHandling.untrackedDaysCurrentMonth}</p>
           <div className="stats-info">
-            Mood not tracked on {dataHandling.untrackedDaysCurrentMonth} days in
-            this month.
+            {dataHandling.untrackedDaysCurrentMonth} untracked days this month.
           </div>
         </div>
       </div>

@@ -1,27 +1,52 @@
-#today-mood-selector-overlay {
-  cursor: pointer;
-}
 #today-mood-selector {
   display: flex;
   justify-content: center;
   min-height: 200px;
   border-bottom: 1px solid var(--border-color1);
-  > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    background-color: var(--bg-color2);
-    min-width: 150px;
-    min-height: 150px;
-    font-size: 3.5rem;
-    border: 5px solid var(--border-color1);
-    border-radius: 50%;
-    pointer-events: none;
-    transition: 200ms;
-    cursor: pointer;
-    p {
-      font-size: 1.2rem;
-    }
+}
+
+.today-mood-selector-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  background-color: var(--bg-color2);
+  min-width: 150px;
+  min-height: 150px;
+  font-size: 3.5rem;
+  border: 5px solid var(--border-color1);
+  border-radius: 50%;
+  transition: 200ms;
+  pointer-events: none;
+  cursor: default;
+  > p {
+    font-size: 1.2rem;
   }
+}
+
+.today-mood-selector-option-active {
+  cursor: pointer;
+  pointer-events: all;
+  min-width: 100px;
+  min-height: 100px;
+  font-size: 2.5rem;
+  background-color: var(--bg-color3);
+  border: 5px solid var(--border-color2);
+  opacity: 0.95;
+  z-index: 1;
+  > p {
+    font-size: 0.8rem;
+  }
+}
+.today-mood-selector-option-active:nth-of-type(1) {
+  transform: translateY(-110%);
+}
+.today-mood-selector-option-active:nth-of-type(2) {
+  transform: translateX(-110%);
+}
+.today-mood-selector-option-active:nth-of-type(4) {
+  transform: translateX(110%);
+}
+.today-mood-selector-option-active:nth-of-type(5) {
+  transform: translateY(110%);
 }
