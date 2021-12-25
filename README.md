@@ -10,6 +10,7 @@ Try it here: https://timschilling.net/moodmap/
 
 ## Next steps:
 
+- Make menu focusable
 - Make whole option element clickable on the Today page as on Options page
 - Save active page state
 - Make mood selector close when clicking outside (usability issue when choosing the already active option)
