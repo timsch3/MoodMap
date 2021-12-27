@@ -1,15 +1,21 @@
 #today-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   line-height: 2rem;
   border-bottom: 1px solid var(--border-color1);
-  margin-bottom: var(--y-list-gap);
-  padding-bottom: var(--y-padding);
-  label {
-    margin-right: var(--x-label-input);
+  padding: var(--y-padding);
+  cursor: pointer;
+  input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    transform: translate(var(--x-label-input), 1px);
   }
   textarea {
-    min-width: 50%;
+    min-width: 40%;
     max-width: 95%;
     max-height: 50vh;
     padding: 0.2rem;
+    margin-left: var(--x-label-input);
   }
 }

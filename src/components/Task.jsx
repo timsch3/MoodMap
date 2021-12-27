@@ -26,22 +26,21 @@ const Task = (props) => {
   switch (type) {
     case "check":
       taskTemplate = (
-        <div id="today-task">
-          <label htmlFor={`today-task-${name}`}>{name}</label>
+        <label id="today-task" htmlFor={`today-task-${name}`}>
+          {name}
           <input
             type="checkbox"
             id={`today-task-${name}`}
             onChange={() => setTaskData(!taskData)}
             checked={taskData}
           />
-        </div>
+        </label>
       );
       break;
     case "text":
       taskTemplate = (
-        <div id="today-task">
-          <label htmlFor={`today-task-${name}`}>{name}</label>
-          <p></p>
+        <label id="today-task" htmlFor={`today-task-${name}`}>
+          {name}
           <textarea
             id={`today-task-${name}`}
             rows="4"
@@ -49,7 +48,7 @@ const Task = (props) => {
             onChange={(e) => setTaskData(e.target.value)}
             value={taskData}
           ></textarea>
-        </div>
+        </label>
       );
       break;
     default:

@@ -39,4 +39,5 @@ body {
   width: 400px;
   background-color: var(--bg-color2);
   color: var(--text-color1);
+  border-radius: 5px;
 }
