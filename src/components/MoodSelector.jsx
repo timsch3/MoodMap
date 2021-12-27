@@ -16,6 +16,7 @@ const MoodSelector = () => {
   }, [taskData]);
 
   // handle the mood selection menu
+  let [menuTrigger, setMenuTrigger] = useState(false); // when picking already selected value
   let [moodMenuOverlayActive, setMoodMenuOverlayActive] = useState(false);
   let [moodOptionClass, setMoodOptionClass] = useState(
     "today-mood-selector-option"
@@ -29,7 +30,7 @@ const MoodSelector = () => {
   useEffect(() => {
     setMoodMenuOverlayActive(false);
     setMoodOptionClass("today-mood-selector-option");
-  }, [taskData]);
+  }, [taskData, menuTrigger]);
 
   return (
     <div
@@ -42,7 +43,10 @@ const MoodSelector = () => {
     >
       <div id="today-mood-selector">
         <div
-          onClick={() => setTaskData("very-good")}
+          onClick={() => {
+            setTaskData("very-good");
+            setMenuTrigger(!menuTrigger);
+          }}
           className={moodOptionClass}
           style={taskData === "very-good" ? { zIndex: "2" } : { zIndex: "1" }}
         >
@@ -50,7 +54,10 @@ const MoodSelector = () => {
           <p>Very good</p>
         </div>
         <div
-          onClick={() => setTaskData("good")}
+          onClick={() => {
+            setTaskData("good");
+            setMenuTrigger(!menuTrigger);
+          }}
           className={moodOptionClass}
           style={taskData === "good" ? { zIndex: "2" } : { zIndex: "1" }}
         >
@@ -58,7 +65,10 @@ const MoodSelector = () => {
           <p>Good</p>
         </div>
         <div
-          onClick={() => setTaskData("indifferent")}
+          onClick={() => {
+            setTaskData("indifferent");
+            setMenuTrigger(!menuTrigger);
+          }}
           className={moodOptionClass}
           style={taskData === "indifferent" ? { zIndex: "2" } : { zIndex: "1" }}
         >
@@ -66,7 +76,10 @@ const MoodSelector = () => {
           <p>Indifferent</p>
         </div>
         <div
-          onClick={() => setTaskData("bad")}
+          onClick={() => {
+            setTaskData("bad");
+            setMenuTrigger(!menuTrigger);
+          }}
           className={moodOptionClass}
           style={taskData === "bad" ? { zIndex: "2" } : { zIndex: "1" }}
         >
@@ -74,7 +87,10 @@ const MoodSelector = () => {
           <p>Bad</p>
         </div>
         <div
-          onClick={() => setTaskData("very-bad")}
+          onClick={() => {
+            setTaskData("very-bad");
+            setMenuTrigger(!menuTrigger);
+          }}
           className={moodOptionClass}
           style={taskData === "very-bad" ? { zIndex: "2" } : { zIndex: "1" }}
         >
