@@ -1,6 +1,6 @@
-let today = new Date();
+export const today = new Date();
 
-export let currentMonth = today.toLocaleDateString("en-US", {
+export const currentMonthString = today.toLocaleDateString("en-US", {
   month: "long",
   year: "numeric",
 });
@@ -11,7 +11,7 @@ export function convertToSaveFormat(date) {
 
 export function getCurrentDate(UTC) {
   // UTC format for saving unique strings while keeping local dates correct
-  let todayUTC = new Date(today.toUTCString());
+  const todayUTC = new Date(today.toUTCString());
   return UTC === true
     ? convertToSaveFormat(todayUTC)
     : todayUTC.toLocaleDateString("en-US", {
@@ -22,11 +22,13 @@ export function getCurrentDate(UTC) {
       });
 }
 
-export function getDaysInCurrentMonth() {
-  var today = new Date();
-  var date = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), 1));
-  var days = [];
-  while (date.getUTCMonth() === today.getUTCMonth()) {
+export function getDaysInMonth(YY, MM) {
+  const propsDate = new Date(`${YY}-${MM}-01T00:00:00.000Z`);
+  const date = new Date(
+    Date.UTC(propsDate.getUTCFullYear(), propsDate.getUTCMonth())
+  );
+  let days = [];
+  while (date.getUTCMonth() === propsDate.getUTCMonth()) {
     days.push(new Date(date));
     date.setUTCDate(date.getUTCDate() + 1);
   }
