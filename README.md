@@ -10,6 +10,7 @@ Try it here: https://timschilling.net/moodmap/
 
 ## Next steps:
 
+- When no mood for a day is selected display "Please select"
 - Make menu focusable
 - Save active page state
 - Make mood statistics clickable and show notes and other data
